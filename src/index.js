@@ -16,7 +16,11 @@ export default {
 		return new Response(JSON.stringify(json), {
 			status: 200,
 			headers: {
-				'content-type': 'application/json'
+				'content-type': 'application/json',
+				'Content-Type': 'application/json',
+				'Access-Control-Allow-Origin': 'https://www.unluna.com',
+				'Access-Control-Allow-Methods': 'GET, OPTIONS',
+				'Access-Control-Allow-Headers': 'Content-Type',
 			}
 		});
 	}
