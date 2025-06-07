@@ -14,7 +14,7 @@ const yoga = createYoga({
 		`,
 		resolvers: {
 			Query: {
-				ask: async (_, { prompt }) => {
+				ask: async (_, { prompt }, { env }) => {
 					let json = {};
 
 					try {
@@ -22,7 +22,7 @@ const yoga = createYoga({
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json',
-								Authorization: `Bearer sk-13e0db35827f4de080d8312f28e3513c`
+								Authorization: `Bearer ${env.API_KEY}`
 							},
 							body: JSON.stringify({
 								model: 'deepseek-chat',
